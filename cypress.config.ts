@@ -16,5 +16,11 @@ export default defineConfig({
 
       return config;
     },
-  }
+  },
+  defaultCommandTimeout: 5000,
+  chromeWebSecurity: false,
+  pageLoadTimeout: 30000,
+  responseTimeout: 10000,
+  requestTimeout: 10000,
+  video: false,
 });
