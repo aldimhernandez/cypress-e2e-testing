@@ -4,7 +4,8 @@
   "description": "automation testing project with cypress, cucumber and typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "form:chrome": "npx cypress run --env TAGS='@form' --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,17 @@
     "cypress": "^14.2.0",
     "standard": "^17.1.2",
     "typescript": "^5.8.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.{js,ts}",
+    "json": {
+      "enabled": true,
+      "output": "cypress/report/json/cucumber-report.json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "cypress/report/html/cucumber-report.html"
+    }
   },
   "eslintConfig": {
     "extends": [
