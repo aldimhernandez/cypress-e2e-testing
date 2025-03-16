@@ -25,6 +25,7 @@
   "homepage": "https://github.com/aldimhernandez/cypress-e2e-testing#readme",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "@types/cypress": "^0.1.6",
     "@types/node": "^22.13.10",
     "cypress": "^14.2.0",
@@ -35,8 +36,5 @@
     "extends": [
       "standard"
     ]
-  },
-  "dependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4"
   }
 }
