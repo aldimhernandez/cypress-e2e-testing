@@ -1,0 +1,42 @@
+{
+  "name": "cypress-e2e-testing",
+  "version": "1.0.0",
+  "description": "automation testing project with cypress, cucumber and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldimhernandez/cypress-e2e-testing.git"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "typescript",
+    "e2e",
+    "automation"
+  ],
+  "author": "https://github.com/aldimhernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aldimhernandez/cypress-e2e-testing/issues"
+  },
+  "homepage": "https://github.com/aldimhernandez/cypress-e2e-testing#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@types/cypress": "^0.1.6",
+    "@types/node": "^22.13.10",
+    "cypress": "^14.2.0",
+    "standard": "^17.1.2",
+    "typescript": "^5.8.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
+  },
+  "dependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4"
+  }
+}
