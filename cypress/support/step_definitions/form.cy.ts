@@ -1,16 +1,18 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { homePage } from "../../pages/form/HomePage";
+import { formPage } from "../../pages/form/FormPage";
 
 //* Background
 Given('I visit the demoqa site', () => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
 });
 
 When('I navigate to the form section', () => {
-    cy.contains('[class="card mt-4 top-card"]', 'Forms').should('be.visible').click();
+    homePage.navigateToFormSection();
 });
 
 When('I click on the practice form button', () => {
-    cy.url().should('eq', 'https://demoqa.com/forms');
+    formPage.validateUrl();
     cy.contains('Please select an item from left to start practice.').should('be.visible');
     cy.contains('.element-list', 'Practice Form').should('be.visible').click();
 });
