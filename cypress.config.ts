@@ -5,6 +5,7 @@ import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild
 
 export default defineConfig({
   e2e: {
+    baseUrl: "https://demoqa.com",
     specPattern: "cypress/e2e/**/*.feature",
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
