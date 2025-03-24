@@ -22,6 +22,10 @@ export default class BasePage {
             cy.contains(text).should('exist').and('be.visible').click();
     }
 
+    typeText(text: string, selector: string): void {
+        cy.get(selector).type(text);
+    }
+
     //* Validations
     validateTitle() {
         cy.title().should('eq', this.title);
