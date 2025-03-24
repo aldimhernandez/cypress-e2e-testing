@@ -59,10 +59,6 @@ To manually trigger the CI workflow, you can use the `workflow_dispatch` event i
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-## 📄 License
-
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for more details.
-
 ---
 
 Made with ❤️ by [Aldi Hernandez](https://github.com/aldimhernandez)
