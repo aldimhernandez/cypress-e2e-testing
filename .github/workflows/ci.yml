@@ -35,6 +35,7 @@ jobs:
           TERM: xterm
 
       - name: Generate Chrome report name
+        if: always()
         id: generate_chrome_report_name
         run: |
           timestamp=$(date +"%Y%m%d%H%M%S")
@@ -42,12 +43,14 @@ jobs:
           echo "CHROME_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Chrome Cucumber Report
+        if: always()
         run: |
           if [ -d "cypress/report/html" ]; then
             mv cypress/report/html cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
           fi
 
       - name: Upload Chrome Cucumber Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
@@ -82,6 +85,7 @@ jobs:
           TERM: xterm
 
       - name: Generate Edge report name
+        if: always()
         id: generate_edge_report_name
         run: |
           timestamp=$(date +"%Y%m%d%H%M%S")
@@ -89,12 +93,14 @@ jobs:
           echo "EDGE_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Edge Cucumber Report
+        if: always()
         run: |
           if [ -d "cypress/report/html" ]; then
             mv cypress/report/html cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
           fi
 
       - name: Upload Edge Cucumber Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
