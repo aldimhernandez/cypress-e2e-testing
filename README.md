@@ -55,7 +55,7 @@ This project uses GitHub Actions for Continuous Integration (CI). The CI workflo
 
 To manually trigger the CI workflow, you can use the `workflow_dispatch` event in GitHub Actions.
 
-## 🤝 Contributing
+## 🤝 Contributions
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
