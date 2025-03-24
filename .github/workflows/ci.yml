@@ -30,21 +30,21 @@ jobs:
       - name: Run Cypress tests in Chrome
         run: npx cypress run --browser chrome
 
-      - name: Generate report name
-        id: generate_report_name
+      - name: Generate Chrome report name
+        id: generate_chrome_report_name
         run: |
           timestamp=$(date +"%Y%m%d%H%M%S")
           report_name="${timestamp}-chrome-cucumber-report"
-          echo "REPORT_NAME=${report_name}" >> $GITHUB_ENV
+          echo "CHROME_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
-      - name: Rename Cucumber Report
-        run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+      - name: Rename Chrome Cucumber Report
+        run: mv cypress/report/html cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
 
-      - name: Upload Cucumber Report
+      - name: Upload Chrome Cucumber Report
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
-          path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+          name: ${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
+          path: cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
 
   build-edge:
     runs-on: ubuntu-latest
@@ -70,18 +70,18 @@ jobs:
       - name: Run Cypress tests in Edge
         run: npx cypress run --browser edge
 
-      - name: Generate report name
-        id: generate_report_name
+      - name: Generate Edge report name
+        id: generate_edge_report_name
         run: |
           timestamp=$(date +"%Y%m%d%H%M%S")
           report_name="${timestamp}-edge-cucumber-report"
-          echo "REPORT_NAME=${report_name}" >> $GITHUB_ENV
+          echo "EDGE_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
-      - name: Rename Cucumber Report
-        run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+      - name: Rename Edge Cucumber Report
+        run: mv cypress/report/html cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
 
-      - name: Upload Cucumber Report
+      - name: Upload Edge Cucumber Report
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
-          path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+          name: ${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
+          path: cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
