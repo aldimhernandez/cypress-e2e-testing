@@ -32,6 +32,10 @@ jobs:
           TERM: xterm
         run: npx cypress run --browser chrome
 
+      - name: Debug Cypress tests in Chrome
+        if: failure()
+        run: echo "Cypress tests in Chrome failed"
+
       - name: Generate Chrome report name
         id: generate_chrome_report_name
         run: |
@@ -73,6 +77,10 @@ jobs:
         env:
           TERM: xterm
         run: npx cypress run --browser edge
+
+      - name: Debug Cypress tests in Edge
+        if: failure()
+        run: echo "Cypress tests in Edge failed"
 
       - name: Generate Edge report name
         id: generate_edge_report_name
