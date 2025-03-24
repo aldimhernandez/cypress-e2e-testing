@@ -46,10 +46,10 @@ To run the Cypress tests, you can use the following commands:
 
 - **Run tests with specific tags** (e.g., `@form`):
   ```sh
-  npm run form:chrome
+  npx cypress run --env TAGS='@form' --browser chrome
   ```
 
-## 🧪 Running Tests
+## 🧪 CI / CD
 
 This project uses GitHub Actions for Continuous Integration (CI). The CI workflow is defined in `.github/workflows/ci.yml` and runs the tests on every push and pull request to the `master` branch.
 
