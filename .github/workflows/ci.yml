@@ -50,8 +50,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
-          path: cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
+          name: ${{ env.CHROME_REPORT_NAME }}
+          path: cypress/report/${{ env.CHROME_REPORT_NAME }}
 
   build-edge:
     runs-on: ubuntu-latest
@@ -87,12 +87,12 @@ jobs:
         if: always()
         run: |
           if [ -d "cypress/report/html" ]; then
-            mv cypress/report/html cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
+            mv cypress/report/html cypress/report/${{ env.EDGE_REPORT_NAME }}
           fi
 
       - name: Upload Edge Cucumber Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
-          path: cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
+          name: ${{ env.EDGE_REPORT_NAME }}
+          path: cypress/report/${{ env.EDGE_REPORT_NAME }}
