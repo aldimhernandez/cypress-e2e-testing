@@ -71,12 +71,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Edge
-        run: sudo apt-get install -y microsoft-edge-stable
-
-      - name: Verify Edge installation
-        run: microsoft-edge --version
-
       - name: Run Cypress tests in Edge
         uses: cypress-io/github-action@v6
         with:
