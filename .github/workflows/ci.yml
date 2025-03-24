@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-chrome:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,11 +27,52 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Cypress tests
-        run: npm run test
+      - name: Run Cypress tests in Chrome
+        run: npx cypress run --browser chrome
+
+      - name: Generate report name
+        id: generate_report_name
+        run: bash scripts/generate-report-name.sh
+
+      - name: Rename Cucumber Report
+        run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
 
       - name: Upload Cucumber Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: cucumber-report
-          path: cypress/report/html
+          name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
+          path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+
+  build-edge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Edge
+        run: sudo apt-get install -y microsoft-edge-stable
+
+      - name: Run Cypress tests in Edge
+        run: npx cypress run --browser edge
+
+      - name: Generate report name
+        id: generate_report_name
+        run: bash scripts/generate-report-name.sh
+
+      - name: Rename Cucumber Report
+        run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
+
+      - name: Upload Cucumber Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
+          path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
