@@ -44,7 +44,10 @@ jobs:
           echo "CHROME_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Chrome Cucumber Report
-        run: mv cypress/report/html cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
+        run: |
+          if [ -d "cypress/report/html" ]; then
+            mv cypress/report/html cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
+          fi
 
       - name: Upload Chrome Cucumber Report
         uses: actions/upload-artifact@v4
@@ -90,7 +93,10 @@ jobs:
           echo "EDGE_REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Edge Cucumber Report
-        run: mv cypress/report/html cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
+        run: |
+          if [ -d "cypress/report/html" ]; then
+            mv cypress/report/html cypress/report/${{ steps.generate_edge_report_name.outputs.EDGE_REPORT_NAME }}
+          fi
 
       - name: Upload Edge Cucumber Report
         uses: actions/upload-artifact@v4
