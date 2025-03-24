@@ -38,7 +38,7 @@ jobs:
         run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
 
       - name: Upload Cucumber Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
           path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
@@ -72,7 +72,7 @@ jobs:
         run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
 
       - name: Upload Cucumber Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.generate_report_name.outputs.REPORT_NAME }}
           path: cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
