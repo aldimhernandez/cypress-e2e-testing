@@ -32,7 +32,10 @@ jobs:
 
       - name: Generate report name
         id: generate_report_name
-        run: bash scripts/generate-report-name.sh
+        run: |
+          timestamp=$(date +"%Y%m%d%H%M%S")
+          report_name="${timestamp}-chrome-cucumber-report"
+          echo "REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Cucumber Report
         run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
@@ -61,12 +64,18 @@ jobs:
       - name: Install Edge
         run: sudo apt-get install -y microsoft-edge-stable
 
+      - name: Verify Edge installation
+        run: microsoft-edge --version
+
       - name: Run Cypress tests in Edge
         run: npx cypress run --browser edge
 
       - name: Generate report name
         id: generate_report_name
-        run: bash scripts/generate-report-name.sh
+        run: |
+          timestamp=$(date +"%Y%m%d%H%M%S")
+          report_name="${timestamp}-edge-cucumber-report"
+          echo "REPORT_NAME=${report_name}" >> $GITHUB_ENV
 
       - name: Rename Cucumber Report
         run: mv cypress/report/html cypress/report/${{ steps.generate_report_name.outputs.REPORT_NAME }}
