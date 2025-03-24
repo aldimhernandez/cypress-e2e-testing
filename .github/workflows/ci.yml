@@ -44,10 +44,7 @@ jobs:
 
       - name: Rename Chrome Cucumber Report
         if: always()
-        run: |
-          if [ -d "cypress/report/html" ]; then
-            mv cypress/report/html cypress/report/${{ steps.generate_chrome_report_name.outputs.CHROME_REPORT_NAME }}
-          fi
+        run: mv cypress/report/html cypress/report/${{ env.CHROME_REPORT_NAME }}
 
       - name: Upload Chrome Cucumber Report
         if: always()
