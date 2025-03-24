@@ -28,6 +28,8 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests in Chrome
+        env:
+          TERM: xterm
         run: npx cypress run --browser chrome
 
       - name: Generate Chrome report name
@@ -68,6 +70,8 @@ jobs:
         run: microsoft-edge --version
 
       - name: Run Cypress tests in Edge
+        env:
+          TERM: xterm
         run: npx cypress run --browser edge
 
       - name: Generate Edge report name
