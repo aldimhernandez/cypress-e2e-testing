@@ -61,8 +61,6 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 
 ## Project State: 🚧 In Progress (Work in progress) 🚧
 
-This is a personal portfolio project to demonstrate Cypress-based E2E automation.
-
 ## ✅ Done
 
 - **Form Feature:** Validation, input handling, and submission logic
