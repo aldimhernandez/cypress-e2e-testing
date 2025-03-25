@@ -59,6 +59,22 @@ To manually trigger the CI workflow, you can use the `workflow_dispatch` event i
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
+## Project State: 🚧 In Progress (Work in progress) 🚧
+
+This is a personal portfolio project to demonstrate Cypress-based E2E automation.
+
+## ✅ Done
+
+- **Form Feature:** Validation, input handling, and submission logic
+- **CI/CD Integration:** Tests automatically run via GitHub Actions on every push
+- **Cucumber Report Implementation:** BDD reporting using Cypress + Cucumber
+
+## 🚧 Pending (Coming Soon)
+
+- **Iframe Feature:** Tests involving embedded content and interactions within iframes
+- **API Feature:** Validating backend responses and mocking requests
+- **Download File Validation:** Automating file download tests and content checks
+
 ---
 
 Made with ❤️ by [Aldi Hernandez](https://github.com/aldimhernandez)
