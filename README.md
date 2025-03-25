@@ -7,9 +7,9 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Running Tests](#running-tests)
-- [Contributing](#contributing)
-- [License](#license)
+- [CI / CD](#running-tests)
+- [Contributions](#contributing)
+- [Project State](#proyect-state)
 
 ## ✨ Features
 
