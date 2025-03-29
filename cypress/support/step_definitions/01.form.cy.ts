@@ -1,19 +1,16 @@
-import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
 import { homePage } from "../../pages/form/HomePage";
 import { formPage, practiceFormPage } from "../../pages/form/FormPage";
+import { navBarPage } from "cypress/pages/form/NavBarPage";
 
 //* Background
-Given('I visit the demoqa site', () => {
-    homePage.visit();
-});
-
 When('I navigate to the form section', () => {
     homePage.navigateToFormSection();
 });
 
 When('I click on the practice form button', () => {
     formPage.pageRedirectValidation();
-    formPage.navigateToPracticeForm();
+    navBarPage.navigateToPracticeForm();
 });
 
 Then('I see the empty form', () => {

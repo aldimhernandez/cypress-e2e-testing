@@ -1,16 +1,9 @@
+import { IPage } from "./IPage";
+
+// filepath: c:\Users\Aldi\Desktop\cypress-e2e-testing\cypress\pages\BasePage.ts
 export default class BasePage {
-    private readonly title: string;
-    private readonly url: string;
-    private readonly h1?: string;
-
-    constructor(title: string, url: string, h1?: string) {
-        this.title = title;
-        this.url = url;
-        this.h1 = h1;
-    }
-
     //* Actions
-    visit() {
+    visit(this: IPage) {
         cy.visit(this.url);
     }
 
@@ -27,16 +20,16 @@ export default class BasePage {
     }
 
     //* Validations
-    validateTitle() {
-        cy.title().should('eq', this.title);
+    validateTitle(expectedTitle: string) {
+        cy.title().should('eq', expectedTitle);
     }
 
-    validateUrl() {
-        cy.url().should('eq', this.url);
+    validateUrl(expectedUrl: string) {
+        cy.url().should('eq', expectedUrl);
     }
 
-    validateH1() {
-        cy.get('h1').should('have.text', this.h1).and('be.visible');
+    validateH1(expectedH1: string) {
+        cy.get('h1').should('have.text', expectedH1).and('be.visible');
     }
 
     validateContainsText(text: string): void;
@@ -46,4 +39,6 @@ export default class BasePage {
             cy.contains(selector, text).should('exist').and('be.visible') :
             cy.contains(text).should('exist').and('be.visible');
     }
+
+    static readonly SUBTITLE_TEXT: string = 'Please select an item from left to start practice.';
 }
