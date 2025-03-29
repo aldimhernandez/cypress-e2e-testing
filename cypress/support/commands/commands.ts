@@ -35,3 +35,13 @@
 //     }
 //   }
 // }
+
+import './get-frame-1.command';
+
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            getIframe1Body(): Chainable<JQuery<HTMLElement>>;
+        }
+    }
+}
