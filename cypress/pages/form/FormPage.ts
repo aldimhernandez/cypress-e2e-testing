@@ -1,30 +1,26 @@
 import BasePage from "../BasePage";
+import { IPage } from "../IPage";
 
-class FormPage extends BasePage {
+class FormPage extends BasePage implements IPage {
 
-    private readonly elementListSelector: string = '.element-list';
-
-    constructor() {
-        super('DEMOQA', `${Cypress.config().baseUrl}/forms`);
-    }
+    readonly title: string = 'DEMOQA';
+    readonly url: string = `${Cypress.config().baseUrl}/forms`;
+    readonly elementListSelector: string = '.element-list';
 
     pageRedirectValidation() {
-        formPage.validateTitle();
-        formPage.validateUrl();
-        this.validateContainsText(FormPage.SUBTITLE_TEXT);
+        formPage.validateTitle(this.title);
+        formPage.validateUrl(this.url);
+        this.validateContainsText(BasePage.SUBTITLE_TEXT);
     }
-
-    navigateToPracticeForm() {
-        this.clickElementByText(FormPage.PRACTICE_FORM_TEXT, this.elementListSelector);
-    }
-
-    static readonly SUBTITLE_TEXT: string = 'Please select an item from left to start practice.';
-    static readonly PRACTICE_FORM_TEXT: string = 'Practice Form';
 }
 
 export const formPage = new FormPage();
 
-class PracticeFormPage extends BasePage {
+class PracticeFormPage extends BasePage implements IPage {
+
+    readonly title: string = 'DEMOQA';
+    readonly url: string = `${Cypress.config().baseUrl}/automation-practice-form`;
+    readonly h1: string = 'Practice Form';
 
     private readonly formSelector: string = 'form';
     private readonly modalHeaderSelector: string = '.modal-header';
@@ -41,10 +37,6 @@ class PracticeFormPage extends BasePage {
     private readonly citySelector: string = '#city';
     private readonly submitButtonSelector: string = '#submit';
 
-    constructor() {
-        super('DEMOQA', `${Cypress.config().baseUrl}/automation-practice-form`, 'Practice Form');
-    }
-
     //* Validation
     emptyFormValidation() {
         cy.get(this.formSelector).within(() => {
@@ -53,8 +45,9 @@ class PracticeFormPage extends BasePage {
     }
 
     pageRedirectValidation() {
-        practiceFormPage.validateUrl();
-        practiceFormPage.validateH1();
+        practiceFormPage.validateTitle(this.title);
+        practiceFormPage.validateUrl(this.url);
+        practiceFormPage.validateH1(this.h1);
         this.validateContainsText(PracticeFormPage.STUDENT_REGISTRATION_FORM_TEXT, 'h5');
         this.emptyFormValidation();
     }

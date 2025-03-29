@@ -1,17 +1,28 @@
 import BasePage from "../BasePage";
+import { IPage } from "../IPage";
 
-class HomePage extends BasePage {
-    private readonly navToFormSelector: string = '[class="card mt-4 top-card"]'
+class HomePage extends BasePage implements IPage {
+    readonly title: string = 'DEMOQA';
+    readonly url: string = `${Cypress.config().baseUrl}/`;
 
-    constructor() {
-        super('DEMOQA', '/');
+    private readonly cardSectionSelector: string = '[class="card mt-4 top-card"]';
+
+    pageRedirectValidation() {
+        homePage.validateTitle(this.title);
+        homePage.validateUrl(this.url);
+        cy.get('header > a > img').should('have.attr', 'src', '/images/Toolsqa.jpg');
     }
 
     navigateToFormSection() {
-        this.clickElementByText(HomePage.FORM_CARD_TEXT, this.navToFormSelector);
+        this.clickElementByText(HomePage.FORM_CARD_TEXT, this.cardSectionSelector);
+    }
+
+    navigateToIframeSection() {
+        this.clickElementByText(HomePage.ALERTS_FRAMES_WINDOWS_CARD_TEXT, this.cardSectionSelector);
     }
 
     static readonly FORM_CARD_TEXT: string = 'Forms';
+    static readonly ALERTS_FRAMES_WINDOWS_CARD_TEXT: string = 'Alerts, Frame & Windows';
 }
 
 export const homePage = new HomePage();
