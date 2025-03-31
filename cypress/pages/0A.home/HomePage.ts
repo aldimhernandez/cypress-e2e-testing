@@ -21,8 +21,13 @@ class HomePage extends BasePage implements IPage {
         this.clickElementByText(HomePage.ALERTS_FRAMES_WINDOWS_CARD_TEXT, this.cardSectionSelector);
     }
 
+    navigateToBookStore() {
+        this.clickElementByText(HomePage.BOOK_STORE_TEXT, this.cardSectionSelector);
+    }
+
     static readonly FORM_CARD_TEXT: string = 'Forms';
     static readonly ALERTS_FRAMES_WINDOWS_CARD_TEXT: string = 'Alerts, Frame & Windows';
+    static readonly BOOK_STORE_TEXT: string = 'Book Store Application';
 }
 
 export const homePage = new HomePage();
