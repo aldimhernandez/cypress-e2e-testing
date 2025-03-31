@@ -12,10 +12,11 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+/// <reference types="cypress" />
+
+Cypress.on('uncaught:exception', (err: Error, runnable: Mocha.Runnable) => {
+    return false;
+});
 
 // Import commands.js using ES2015 syntax:
 import './commands/commands'
-
-Cypress.on('uncaught:exception', (err, runnable) => {
-    return false;
-});
