@@ -1,6 +1,6 @@
 import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
-import { homePage } from "../../pages/0A.home/HomePage";
-import { formPage, practiceFormPage } from "../../pages/01.form/FormPage";
+import { homePage } from "cypress/pages/0A.home/HomePage";
+import { formPage, practiceFormPage } from "cypress/pages/01.form/FormPage";
 import { navBarPage } from "cypress/pages/0B.navbar/NavBarPage";
 
 //* Background
