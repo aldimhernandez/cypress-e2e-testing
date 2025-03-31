@@ -10,7 +10,7 @@ Feature: Form filling
     And I click on the practice form button
     Then I see the empty form
 
-  Scenario: Fill out the form with valid data: <name>, <lastName>, <email>, <gender>, <mobile>, <dob>, <subject>, <hobbies>, <picture>, <address>, <state>, <city>.
+  Scenario Outline: Fill out the form with valid data: <name>, <lastName>, <email>, <gender>, <mobile>, <dob>, <subject>, <hobbies>, <picture>, <address>, <state>, <city>.
     When I enter my personal details "<name>" "<lastName>" "<email>"
     And I choose "<gender>" as my gender
     And I enter <mobile> as my mobile number
@@ -29,7 +29,7 @@ Feature: Form filling
       | John | Doe      | john@do.com | Male   | 1234567890 | 01/01/2000 | Math    | Reading, Sport | john-due.png   | address | NCR           | Delhi |
       | Jane | Smith    | jane@sm.com | Female | 0987654321 | 02/02/2001 | Arts    | Reading, Music | jane-smith.png | address | Uttar Pradesh | Agra  |
 
-  Scenario: Fill out the form with invalid data: <name>, <lastName>, <email>, <mobile>.
+  Scenario Outline: Fill out the form with invalid data: <name>, <lastName>, <email>, <mobile>.
     When I enter my personal details "<name>" "<lastName>" "<email>"
     And I leave the gender field empty
     And I enter "<mobile>" as my mobile number

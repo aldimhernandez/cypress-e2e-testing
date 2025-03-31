@@ -1,5 +1,5 @@
 import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
-import { homePage } from "cypress/pages/form/HomePage";
+import { homePage } from "cypress/pages/0A.home/HomePage";
 
 Given('I visit the demoqa site', () => {
     homePage.visit();

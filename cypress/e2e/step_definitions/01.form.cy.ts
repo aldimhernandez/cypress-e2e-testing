@@ -1,7 +1,7 @@
 import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
-import { homePage } from "../../pages/form/HomePage";
-import { formPage, practiceFormPage } from "../../pages/form/FormPage";
-import { navBarPage } from "cypress/pages/form/NavBarPage";
+import { homePage } from "cypress/pages/0A.home/HomePage";
+import { formPage, practiceFormPage } from "cypress/pages/01.form/FormPage";
+import { navBarPage } from "cypress/pages/0B.navbar/NavBarPage";
 
 //* Background
 When('I navigate to the form section', () => {

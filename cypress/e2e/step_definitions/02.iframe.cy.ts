@@ -1,7 +1,7 @@
 import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
-import { homePage } from "cypress/pages/form/HomePage";
-import { alertsWindowsPage, iframePage } from "cypress/pages/form/IframePage";
-import { navBarPage } from "cypress/pages/form/NavBarPage";
+import { homePage } from "cypress/pages/0A.home/HomePage";
+import { alertsWindowsPage, iframePage } from "cypress/pages/02.iframe/IframePage";
+import { navBarPage } from "cypress/pages/0B.navbar/NavBarPage";
 
 When('I click on the "Alerts, Frame & Windows" menu', () => {
     homePage.navigateToIframeSection();

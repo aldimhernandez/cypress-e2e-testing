@@ -6,7 +6,7 @@ import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild
 export default defineConfig({
   e2e: {
     baseUrl: "https://demoqa.com",
-    specPattern: "cypress/e2e/**/*.feature",
+    specPattern: "cypress/e2e/features/**/*.feature",
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
@@ -24,4 +24,7 @@ export default defineConfig({
   responseTimeout: 10000,
   requestTimeout: 10000,
   video: false,
+  env: {
+    'account_v1_user': `${defineConfig({}).e2e?.baseUrl}/Account/v1/User`,
+  }
 });

@@ -37,11 +37,13 @@
 // }
 
 import './get-frame-1.command';
+import './get-frame-by-attr.command';
 
 declare global {
     namespace Cypress {
         interface Chainable {
             getIframe1Body(): Chainable<JQuery<HTMLElement>>;
+            getIframeByAttr(attr: string): Chainable<JQuery<HTMLElement>>;
         }
     }
 }
