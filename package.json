@@ -28,13 +28,13 @@
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "@types/cypress": "^0.1.6",
-    "@types/node": "^22.13.10",
-    "cypress": "^14.2.0",
+    "@types/node": "^22.13.14",
+    "cypress": "^14.2.1",
     "standard": "^17.1.2",
     "typescript": "^5.8.2"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.{js,ts}",
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}",
     "json": {
       "enabled": true,
       "output": "cypress/report/json/cucumber-report.json"
