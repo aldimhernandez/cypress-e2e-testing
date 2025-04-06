@@ -66,10 +66,10 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 - **Form Feature:** Validation, input handling, and submission logic
 - **CI/CD Integration:** Tests automatically run via GitHub Actions on every push
 - **Cucumber Report Implementation:** BDD reporting using Cypress + Cucumber
+- **Iframe Feature:** Tests involving embedded content and interactions within iframes
 
 ## 🚧 Pending (Coming Soon)
 
-- **Iframe Feature:** Tests involving embedded content and interactions within iframes
 - **API Feature:** Validating backend responses and mocking requests
 - **Download File Validation:** Automating file download tests and content checks
 
