@@ -67,11 +67,11 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 - **CI/CD Integration:** Tests automatically run via GitHub Actions on every push
 - **Cucumber Report Implementation:** BDD reporting using Cypress + Cucumber
 - **Iframe Feature:** Tests involving embedded content and interactions within iframes
+- **Download File Validation:** Automating file download tests and content checks
 
 ## 🚧 Pending (Coming Soon)
 
 - **API Feature:** Validating backend responses and mocking requests
-- **Download File Validation:** Automating file download tests and content checks
 
 ---
 
