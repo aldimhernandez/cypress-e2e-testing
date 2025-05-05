@@ -15,15 +15,10 @@ class NavBarPage extends BasePage {
         this.clickElementByText(NavBarPage.LOGIN_TEXT, this.elementListSelector);
     }
 
-    navigateToElementsSection() {
-        this.clickElementByText(NavBarPage.ELEMENTS_TEXT, this.elementListSelector);
-    }
-
     navigateToUploadAndDownloadSection() {
         this.clickElementByText(NavBarPage.UPLOAD_AND_DOWNLOAD_TEXT, this.elementListSelector);
     }
 
-    static readonly ELEMENTS_TEXT: string = 'Elements';
     static readonly PRACTICE_FORM_TEXT: string = 'Practice Form';
     static readonly FRAME_TEXT: string = 'Frames';
     static readonly LOGIN_TEXT: string = 'Login';
